@@ -24,7 +24,10 @@ val = Number([1, 2, 3, 4]);
 val = parseInt('100.30');
 val = parseFloat('100.10');
 
+const val1 = 5;
+const val2 = String(6);
+const sum = val1 + val2;
+
 // Output
-console.log(val);
-console.log(typeof val);
-console.log(val.toFixed(1));
+console.log(sum);
+console.log(typeof sum);
