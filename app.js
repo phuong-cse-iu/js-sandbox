@@ -1,21 +1,29 @@
-const name = 'Phuong';
-const age = 24;
-const job = 'Software Engineering';
-const city = 'New york';
-let html;
+const person = {
+  firstName: 'Tran',
+  lastName: 'Phuong',
+  age: 24,
+  email: 'trantuanphuong19941994@gmail.com',
+  hobbies: ['music', 'code'],
+  address: {
+    city: 'New York',
+    state: 'Florida'
+  },
+  getBirthYear: function() {
+    return 2018 - this.age;
+  }
+};
 
-// Without template strings (es5)
-html = '<ul><li>Name: ' + name + '</li><li>Age:' + age + '</li><li> ' + job + ' </li><li>City: ' + city + '</li></ul>';
+console.log(person['firstName']);
+console.log(person['age']);
+console.log(person['hobbies']);
+console.log(person['address']['city']);
+console.log(person.getBirthYear());
 
-// With template strings (es6)
-html = `
-  <ul>
-    <li>Name: ${name}</li>
-    <li>Age: ${age}</li>
-    <li>Job: ${job}</li>
-    <li>City: ${city}</li>
-  </ul>
+const people = [
+  {name: 'John', age: 30},
+  {name: 'Mike', age: 27}
+];
 
-`;
-
-document.body.innerHTML = html;
+for (let i = 0; i < people.length; i++) {
+  console.log(people[i]);
+}
