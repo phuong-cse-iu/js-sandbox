@@ -1,45 +1,21 @@
-// String 
-
-const firstName = "Tran";
-const lastName = "Phuong";
+const name = 'Phuong';
 const age = 24;
+const job = 'Software Engineering';
+const city = 'New york';
+let html;
 
-let val;
+// Without template strings (es5)
+html = '<ul><li>Name: ' + name + '</li><li>Age:' + age + '</li><li> ' + job + ' </li><li>City: ' + city + '</li></ul>';
 
-val = firstName + lastName;
+// With template strings (es6)
+html = `
+  <ul>
+    <li>Name: ${name}</li>
+    <li>Age: ${age}</li>
+    <li>Job: ${job}</li>
+    <li>City: ${city}</li>
+  </ul>
 
-// Concatenation
-val = firstName + ' ' + lastName;
+`;
 
-// Append
-val = 'Tran ';
-val += 'Phuong';
-
-// Escaping
-val = 'That\'s awesome, I can\'t wait';
-
-// Concat
-val = firstName.concat(' ', lastName,' ', age);
-
-// indexOf()
-val = firstName.indexOf('a');
-
-// charAt()
-val = firstName.charAt('2');
-
-// last character
-val = firstName.charAt(firstName.length - 1);
-
-// substring()
-val = firstName.substring(0, 4); // Tran
-
-// slice()
-val = firstName.slice(0, 4); // Tran
-
-// replace()
-val = firstName.replace('Tran', 'Tuan'); // Tuan
-
-// includes()
-val = firstName.includes('n');
-
-console.log(val);
+document.body.innerHTML = html;
