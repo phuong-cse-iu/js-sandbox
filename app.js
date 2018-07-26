@@ -1,28 +1,36 @@
-console.log(document.getElementById("task-title"));
+const items = document.getElementsByClassName('collection-item');
 
-// Get things from element
-console.log(document.getElementById("task-title").id); // task-title
+console.log(items[0]);
 
-// Change styling
-document.getElementById("task-title").style.background = '#333';
+items[0].style.color = 'red';
+items[3].textContent = 'Hello';
 
-document.getElementById("task-title").style.color = '#fff';
+let listItems = document.querySelector('ul').getElementsByClassName('collection-item');
 
-// Change content
-document.getElementById("task-title").innerText = 'Task list';
+console.log(listItems);
 
-document.getElementById("task-title").innerHTML = '<span style="color: red">Task list</span>';
+// Convert HTML collection into array
+listItems = Array.from(listItems);
 
-// document.querySelector()
+console.log(listItems);
 
-console.log(document.querySelector('#task-title'));
+listItems.forEach( (item, index) => {
+  console.log(item.className);
+  item.textContent = `${index}: Hello`;
+});
 
-console.log(document.querySelector('.card-title'));
+const newItems = document.querySelectorAll('ul.collection li.collection-item');
 
-document.querySelector('li').style.color = 'red';
+console.log(newItems);
 
-document.querySelector('li:last-child').style.color = 'blue'; // Last item in list affected
+newItems.forEach((item, index) => {
+  item.textContent = `${index}: Hello`;
+});
 
-document.querySelector('li:nth-child(3)').style.color = 'yellow';
+const liOdd = document.querySelectorAll('li:nth-child(odd)');
 
-document.querySelector('li:nth-child(odd)').style.background = '#ccc';
+const liEven = document.querySelectorAll('li:nth-child(even)');
+
+liOdd.forEach( (li, index) => {
+  li.style.background = '#ccc';
+});
