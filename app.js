@@ -1,8 +1,7 @@
-// Date time
+// Window object
 
-let val;
-const today = new Date();
-let birthday = new Date('December 3 1994');
-val = today;
+let val = window.history.length;
 
-console.log(birthday.getDate());
+// Navigator Object
+val = window.navigator.appVersion;
+console.log(val);
