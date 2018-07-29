@@ -1,36 +1,47 @@
-const items = document.getElementsByClassName('collection-item');
+// REPLACE ELEMENT
 
-console.log(items[0]);
+// Create element
+const newHeading = document.createElement('h2');
+newHeading.id = 'task-title';
+newHeading.appendChild(document.createTextNode('Task List'));
 
-items[0].style.color = 'red';
-items[3].textContent = 'Hello';
+// Get old heading 
+const oldHeading = document.getElementById('task-title');
+// Parent
+const cardAction = document.querySelector('.card-action');
 
-let listItems = document.querySelector('ul').getElementsByClassName('collection-item');
+// Relace
+cardAction.replaceChild(newHeading, oldHeading);
 
-console.log(listItems);
 
-// Convert HTML collection into array
-listItems = Array.from(listItems);
+// REMOVE ELEMENT
+const lis = document.querySelectorAll('li');
+const list = document.querySelector('ul');
 
-console.log(listItems);
+// Remove list item
+lis[0].remove();
 
-listItems.forEach( (item, index) => {
-  console.log(item.className);
-  item.textContent = `${index}: Hello`;
-});
+// Remove child element
+list.removeChild(lis[4]);
 
-const newItems = document.querySelectorAll('ul.collection li.collection-item');
+// CLASSES & ATTR
 
-console.log(newItems);
+// Classes
+const firstLi = document.querySelector('li:first-child');
+const link = firstLi.children[0];
+let val;
+val = link.className;
+val = link.classList;
+val = link.classList.add('test');
+val = link.classList.remove('test');
+val = link;
 
-newItems.forEach((item, index) => {
-  item.textContent = `${index}: Hello`;
-});
+// Attributes
+val = link.getAttribute('href');
+val = link.setAttribute('href', 'https://google.com');
+link.setAttribute('title', 'google');
+link.removeAttribute('title');
+val = link.hasAttribute('title');
 
-const liOdd = document.querySelectorAll('li:nth-child(odd)');
 
-const liEven = document.querySelectorAll('li:nth-child(even)');
-
-liOdd.forEach( (li, index) => {
-  li.style.background = '#ccc';
-});
+console.log(val);
